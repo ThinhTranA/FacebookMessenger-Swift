@@ -14,6 +14,8 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Recent"
+        
         collectionView?.backgroundColor = .white;
         collectionView?.alwaysBounceVertical = true
         
@@ -57,13 +59,26 @@ class FriendCell: BaseCell {
         
         dividerLineView.translatesAutoresizingMaskIntoConstraints = false
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-12-[v0(68)]", options:  NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":profileImageView]))
+        addConstraintsWithFormat(format:"H:|-12-[v0(68)]", views: profileImageView)
+        addConstraintsWithFormat(format:"V:|-12-[v0(68)]", views: profileImageView)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-12-[v0(68)]", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":profileImageView]))
+        addConstraintsWithFormat(format:"H:|-82-[v0]|", views: dividerLineView)
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-82-[v0]|", options:  NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":dividerLineView]))
+        addConstraintsWithFormat(format:"V:[v0(1)]|", views: dividerLineView)
+    }
+}
+
+extension UIView{
+    func addConstraintsWithFormat(format: String, views: UIView...){
         
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(1)]|", options:  NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":dividerLineView]))
+        var viewsDictionary = [String: UIView]()
+        for (index, view) in views.enumerated(){
+            let key = "v\(index)"
+            viewsDictionary[key] = view
+            view.translatesAutoresizingMaskIntoConstraints  = false
+        }
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options:  NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
     }
 }
 
