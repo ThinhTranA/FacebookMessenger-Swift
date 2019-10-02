@@ -15,6 +15,7 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         super.viewDidLoad()
         
         collectionView?.backgroundColor = .white;
+        collectionView?.alwaysBounceVertical = true
         
         collectionView?.register(FriendCell.self, forCellWithReuseIdentifier: cellId)
     }
@@ -30,20 +31,54 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 100)
     }
+}
 
-    class FriendCell: UICollectionViewCell{
-        override init(frame: CGRect){
-            super.init(frame: frame)
-            setupViews()
-        }
+class FriendCell: BaseCell {
+    let profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius  = 34
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    let dividerLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.5, alpha: 0.5)
+        return view
+    }()
+    
+    override func setupViews(){
+        addSubview(profileImageView)
+        addSubview(dividerLineView)
         
-        required init?(coder aDecoder: NSCoder){
-            fatalError("init(coder:) has not been implemented")
-        }
+        profileImageView.image = UIImage(named: "zuckprofile")
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
         
-        func setupViews(){
-            backgroundColor = .blue;
-        }
+        dividerLineView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-12-[v0(68)]", options:  NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":profileImageView]))
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-12-[v0(68)]", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":profileImageView]))
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-82-[v0]|", options:  NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":dividerLineView]))
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0(1)]|", options:  NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0":dividerLineView]))
+    }
+}
+
+class BaseCell: UICollectionViewCell{
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupViews(){
+        backgroundColor = .blue;
     }
 }
 
