@@ -15,7 +15,7 @@ class Friend: NSObject {
 
 class Message: NSObject{
     var text: String?
-    var data: NSDate?
+    var date: Date?
     
     var friend: Friend?
 }
@@ -34,7 +34,7 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
         let message = Message()
         message.friend = mark
         message.text = "Hello, my name is Mark. Nice to meet you..."
-        message.data = NSDate()
+        message.date = Date()
         
         messages = [message]
     }
@@ -84,6 +84,13 @@ class MessageCell: BaseCell {
             }
             
             messageLabel.text = message?.text
+            
+            if let date = message?.date{
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "h:mm a"
+                
+                timeLabel.text = dateFormatter.string(from: date)
+            }
         }
     }
     
