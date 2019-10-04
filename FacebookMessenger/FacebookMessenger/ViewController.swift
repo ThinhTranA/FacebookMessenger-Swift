@@ -8,17 +8,7 @@
 
 import UIKit
 
-class Friend: NSObject {
-    var name: String?
-    var profileImageName: String?
-}
 
-class Message: NSObject{
-    var text: String?
-    var date: Date?
-    
-    var friend: Friend?
-}
 
 class FriendsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -26,18 +16,7 @@ class FriendsController: UICollectionViewController, UICollectionViewDelegateFlo
     
     var messages: [Message]?
     
-    func setupData(){
-        let mark = Friend()
-        mark.name = "Mark Zuckerberg"
-        mark.profileImageName = "zuckprofile"
-        
-        let message = Message()
-        message.friend = mark
-        message.text = "Hello, my name is Mark. Nice to meet you..."
-        message.date = Date()
-        
-        messages = [message]
-    }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         

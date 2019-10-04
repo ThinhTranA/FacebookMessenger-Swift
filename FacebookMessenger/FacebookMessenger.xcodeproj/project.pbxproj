@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		254E6373234370EA007DAB6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254E6372234370EA007DAB6F /* SceneDelegate.swift */; };
+		25BEE1F62347795D00741CC4 /* FriendsControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BEE1F52347795D00741CC4 /* FriendsControllerHelper.swift */; };
 		25E7284E234211EB0006CB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E7284D234211EB0006CB73 /* AppDelegate.swift */; };
 		25E72852234211EB0006CB73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E72851234211EB0006CB73 /* ViewController.swift */; };
 		25E72857234211EC0006CB73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E72856234211EC0006CB73 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		254E6372234370EA007DAB6F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		25BEE1F52347795D00741CC4 /* FriendsControllerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsControllerHelper.swift; sourceTree = "<group>"; };
 		25E7284A234211EB0006CB73 /* FacebookMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E7284D234211EB0006CB73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25E72851234211EB0006CB73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				25E72856234211EC0006CB73 /* Assets.xcassets */,
 				25E72858234211EC0006CB73 /* LaunchScreen.storyboard */,
 				25E7285B234211EC0006CB73 /* Info.plist */,
+				25BEE1F52347795D00741CC4 /* FriendsControllerHelper.swift */,
 			);
 			path = FacebookMessenger;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 				25E72852234211EB0006CB73 /* ViewController.swift in Sources */,
 				25E7284E234211EB0006CB73 /* AppDelegate.swift in Sources */,
 				254E6373234370EA007DAB6F /* SceneDelegate.swift in Sources */,
+				25BEE1F62347795D00741CC4 /* FriendsControllerHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
