@@ -8,21 +8,15 @@
 
 import Foundation
 
-class Friend: NSObject {
-    var name: String?
-    var profileImageName: String?
-}
-
-class Message: NSObject{
-    var text: String?
-    var date: Date?
-    
-    var friend: Friend?
-}
-
+import CoreData
 
 extension FriendsController{
        func setupData(){
+        let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        
+        if let context = delegate.manage
+        
+        let mark = NSEntityDescription.insertNewObjectForEntityForName("Friend", insertNewObjectForEntityForName: context)
          let mark = Friend()
          mark.name = "Mark Zuckerberg"
          mark.profileImageName = "zuckprofile"
